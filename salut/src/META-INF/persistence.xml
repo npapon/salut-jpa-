@@ -6,6 +6,7 @@
     <persistence-unit name="bdd_PU" transaction-type="JTA">
         <jta-data-source>jdbc/pool1</jta-data-source>
         <class>bean.Menu</class>
+        <class>bean.Utilisateur</class>
         <properties/>       
     </persistence-unit>   
 </persistence>
