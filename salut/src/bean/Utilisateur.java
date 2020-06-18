@@ -8,6 +8,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 @Entity
 @Table( name = "utilisateur" )
@@ -27,6 +28,8 @@ public class Utilisateur {
     private String    nom;
     @Column( name = "date_creation" )
     private Timestamp date_creation;
+    @Transient
+    private String    emplacementImageProfil;
 
     public int getId() {
         return id;
@@ -76,8 +79,18 @@ public class Utilisateur {
         this.date_creation = date_creation;
     }
 
+    public String getEmplacementImageProfil() {
+        return emplacementImageProfil;
+    }
+
+    public void setEmplacementImageProfil( String emplacementImageProfil ) {
+        this.emplacementImageProfil = emplacementImageProfil;
+    }
+
+    @Override
     public String toString() {
-        return "utilisateur id " + this.getId() + " utilisateur login " + this.getLogin();
+        return "Utilisateur [id=" + id + ", login=" + login + ", email=" + email + ", mot_de_passe=" + mot_de_passe + ", nom="
+                + nom + ", date_creation=" + date_creation + ", emplacementImageProfil=" + emplacementImageProfil + "]";
     }
 
 }

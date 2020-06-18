@@ -14,7 +14,7 @@ import bean.Utilisateur;
 import constante.Adressesinternes;
 import constante.AttributsServlet;
 import dao.UtilisateurDao;
-import inscription.InscriptionForm;
+import formulaire.InscriptionForm;
 
 @WebServlet( "/inscription" )
 public class InscriptionServlet extends HttpServlet {

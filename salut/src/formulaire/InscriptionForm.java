@@ -1,4 +1,4 @@
-package inscription;
+package formulaire;
 
 import java.sql.Timestamp;
 import java.util.ArrayList;
