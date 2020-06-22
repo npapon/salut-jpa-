@@ -32,12 +32,13 @@ public class ConnexionForm {
         String motdepasse = request.getParameter( ParametresFormulaire.MOTDEPASSE );
 
         Utilisateur sessionActive = new Utilisateur();
+
         try {
 
             affecterLogin( login );
             verifierMotDePasse( login, motdepasse, sessionActive );
             String email = recupererEmail( login, motdepasse, sessionActive );
-            // recupererEmplacementImageProfil( email, sessionActive );
+            recupererEmplacementImageProfil( email, sessionActive );
             if ( erreurs.isEmpty() ) {
                 connexionAutorisee = MessagesSucces.SESSIONACTIVE_CREE;
 
@@ -109,7 +110,7 @@ public class ConnexionForm {
     }
 
     private void recupererEmplacementImageProfil( String email, Utilisateur sessionActive ) {
-        Image imageProfil = new Image();
+        Image imageProfil = null;
         if ( imageDao.rechercherImage( email ) == null ) {
             System.out.println( MessagesErreur.IMAGEPROFIL_INEXISTANTE );
 

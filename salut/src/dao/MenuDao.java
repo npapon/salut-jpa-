@@ -21,6 +21,7 @@ public class MenuDao {
 
     public List<Menu> rechercher() throws DAOException {
 
+        System.out.println( "em menu " + em );
         List<Menu> menuComplet = new ArrayList<Menu>();
         Query requete = em.createQuery( JPQL_SELECT_MENU );
 

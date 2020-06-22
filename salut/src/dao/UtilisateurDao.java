@@ -31,7 +31,9 @@ public class UtilisateurDao {
 
     public Utilisateur trouver( String email ) throws DAOException {
         Utilisateur utilisateur = null;
+        System.out.println( "trouver utilisateur em " + em );
         Query requete = em.createQuery( JPQL_SELECT_PAR_EMAIL );
+
         requete.setParameter( PARAM_EMAIL, email );
         try {
             utilisateur = (Utilisateur) requete.getSingleResult();
@@ -46,6 +48,7 @@ public class UtilisateurDao {
     public Utilisateur rechercherSession( String login, String motDePasse ) throws DAOException {
         Utilisateur session = null;
 
+        System.out.println( "rechercher session em " + em );
         Query requete = em.createQuery( JPQL_SELECT_PAR_LOGIN );
         requete.setParameter( PARAM_LOGIN, login );
         try {
@@ -74,7 +77,9 @@ public class UtilisateurDao {
 
     public void supprimerUtilisateur( String email ) throws DAOException {
         // delete from utilisateur where email = ?";
+
         Utilisateur utilisateur = null;
+        System.out.println( "em supprimer user " + em );
         Query requete = em.createQuery( JPQL_SELECT_PAR_EMAIL );
         requete.setParameter( PARAM_EMAIL, email );
         try {

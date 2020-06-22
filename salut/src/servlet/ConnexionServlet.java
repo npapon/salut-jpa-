@@ -24,6 +24,7 @@ import formulaire.ConnexionForm;
 public class ConnexionServlet extends HttpServlet {
     @EJB
     private UtilisateurDao utilisateurDao;
+    @EJB
     private ImageDao       imageDao;
 
     protected void doGet( HttpServletRequest request, HttpServletResponse response ) throws ServletException, IOException {
@@ -54,6 +55,7 @@ public class ConnexionServlet extends HttpServlet {
             session.setAttribute( AttributsServlet.DECONNEXIONBOUTON_PAGE, Adressesinternes.DECONNEXIONBOUTON_COURT );
             session.setAttribute( AttributsServlet.SESSIONACTIVE, sessionactive );
 
+            System.out.println( sessionactive.toString() );
             response.sendRedirect( Adressesinternes.PROFIL_COURT );
         } else {
             HttpSession session = request.getSession();

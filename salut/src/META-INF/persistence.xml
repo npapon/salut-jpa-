@@ -8,6 +8,7 @@
         <class>bean.Menu</class>
         <class>bean.Utilisateur</class>
          <class>bean.Image</class>
+          <class>bean.Achat</class>
         <properties/>       
     </persistence-unit>   
 </persistence>

@@ -83,6 +83,7 @@ public class ProfilForm {
     public void supprimerImageProfil( String contexteApplication, String chemin, HttpServletRequest request ) throws Exception {
         Image imageProfil = new Image();
         String email = recupererEmailAssocieALImage( request );
+        System.out.println( "----email null ? --- " + email );
         imageProfil.setEmail( email );
         String libelleImageProfil = recupererLibelleAssocieALImage( email );
 
