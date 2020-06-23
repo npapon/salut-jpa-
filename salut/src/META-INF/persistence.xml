@@ -9,6 +9,9 @@
         <class>bean.Utilisateur</class>
          <class>bean.Image</class>
           <class>bean.Achat</class>
-        <properties/>       
+                <properties>
+            <property name="eclipselink.logging.level.sql" value="FINE"/>
+            <property name="eclipselink.logging.parameters" value="true"/>
+        </properties>          
     </persistence-unit>   
 </persistence>

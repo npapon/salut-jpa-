@@ -49,11 +49,9 @@ public class AchatDao {
             throws DAOException {
 
         Achat achat = null;
-        Query requete = em.createQuery( JPQL_SELECT_ACHAT );
-        requete.setParameter( PARAM_IDEACH, identifiantAchat );
 
         try {
-            achat = (Achat) requete.getSingleResult();
+            achat = (Achat) em.find( Achat.class, identifiantAchat );
         } catch ( NoResultException e ) {
         } catch ( Exception e ) {
             throw new DAOException( e );
